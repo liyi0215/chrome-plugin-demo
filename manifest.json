@@ -13,11 +13,11 @@
     // "default_locale": "zh_CN",
 
     // 浏览器小图表部分
-    "browser_action": {
-        // "default_popup": "html/popup.html",
-        "default_title": "browser_action_title",
-        "default_icon": "image/icon16.png"
-    },
+    // "browser_action": {
+    //     // "default_popup": "html/popup.html",
+    //     "default_title": "browser_action_title",
+    //     "default_icon": "image/icon16.png"
+    // },
     "background": {
         "scripts": ["background.js"]
     },
@@ -33,15 +33,14 @@
         "js": ["js/jquery.min.js","js/index.js"],
         "css": ["css/main.css"],
         // 在什么情况下使用该脚本
-        "matches": ["http://*/*","https://*/*"]
-        // "matches": ["*://www.baidu.com/"]
+        // "matches": ["http://*/*","https://*/*"]
+        "matches": ["*://www.baidu.com/"]
     }],
     // 应用协议页面
     "permissions": [
         "*://*.baidu.com/",
         "webRequest",
         "webRequestBlocking",
-        "tabs",
-        "bookmarks"
+        "tabs"
     ]
 }

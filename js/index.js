@@ -15,8 +15,10 @@ chrome.extension.sendRequest({
 });
 
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
-    if(request.noInterest) setTimeout(function(){
-        noInterest();
-        console.warn('\n\n\n\n\n\n',request, '\n\n\n\n\n\n');
-    },1000);
+    if(request.noInterest){
+        setTimeout(function(){
+            noInterest();
+            console.warn('\n\n\n\n\n\n',request, '\n\n\n\n\n\n');
+        },200);
+    }
 })
