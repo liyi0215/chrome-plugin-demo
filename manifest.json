@@ -1,42 +1,19 @@
 {
-    "name": "liyi-chrome-plugin-demo",
+    "name": "make-noInterest-obvious",
     "version": "1.0.1",
     "manifest_version": 2,
-
-    // 简单描述
-    "description": "chrome plug analyse and guard the http hijack",
+    "description": "让百度首页【不感兴趣】按钮显示更明显",
     "icons": {
         "16": "image/icon16.png",
         "48": "image/icon48.png"
     },
-    // 选择默认语言
-    // "default_locale": "zh_CN",
-
-    // 浏览器小图表部分
-    // "browser_action": {
-    //     // "default_popup": "html/popup.html",
-    //     "default_title": "browser_action_title",
-    //     "default_icon": "image/icon16.png"
-    // },
     "background": {
         "scripts": ["background.js"]
     },
-    // "options_page": "html/options.html",
-    // 引入一个脚本
     "content_scripts": [{
-        // 可选。 控制content script注入的时机。可以是document_start， document_end或者document_idle。缺省时是document_idle。
-        // 如果是document_start, 文件将在所有CSS加载完毕，但是没有创建DOM并且没有运行任何脚本的时候注入。
-        // 如果是document_end，则文件将在创建完DOM之后，但还没有加载类似于图片或frame等的子资源前立刻注入。
-        // 如果是document_idle，浏览器会在document_end和发出window.onload事件之间的某个时机注入。具体的时机取决与文档加载的复杂度，为加快页面加载而优化。
-        // 注意：在document_idle的情况下，content script不一定会接收到window.onload事件，因为它有可能在事件发出之后才加载。在大多数情况下， 在content script中监听onload事件是不必要的，因为浏览器会确保在DOM创建完成后才执行它。 如果一定要在window.onload的时候运行，可以通过document.readyState属性来检查onload事件是否已经发出。
-        // "run_at": "document_start",
-        "js": ["js/jquery.min.js","js/index.js"],
-        "css": ["css/main.css"],
-        // 在什么情况下使用该脚本
-        // "matches": ["http://*/*","https://*/*"]
+        "js": ["js/index.js"],
         "matches": ["*://www.baidu.com/"]
     }],
-    // 应用协议页面
     "permissions": [
         "*://*.baidu.com/",
         "webRequest",
